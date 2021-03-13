@@ -1,0 +1,46 @@
+<div class="box">
+  <div class="top">
+    Angular TodoList
+  </div>
+  <div class="search">
+    <input [(ngModel)]="userInput" type="text" style="margin-right: 10px;">
+    <button (click)="change()">添加</button>
+  </div>
+  <div class="content">
+    <div class="item" *ngFor="let item of nameList ; trackBy: identify">
+      <span>{{item}}</span>
+
+      <button (click)="delete(item)">删除</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .box {
+    width: 300px;
+    /* background-color: aqua; */
+    background-color: rgba(245, 241, 241, 0.863);
+    text-align: center;
+  }
+
+  .top {
+    background-color: rgb(199, 198, 198);
+    padding: 7px;
+  }
+
+  .search {
+    padding: 7px;
+  }
+
+  .content {
+    padding: 35px;
+    background-color: #fff;
+    border: 1px rgb(230, 224, 224) solid;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+</style>
